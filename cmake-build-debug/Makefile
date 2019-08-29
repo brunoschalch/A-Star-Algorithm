@@ -122,6 +122,60 @@ astar/fast:
 	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/build
 .PHONY : astar/fast
 
+Agent.obj: Agent.cpp.obj
+
+.PHONY : Agent.obj
+
+# target to build an object file
+Agent.cpp.obj:
+	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/Agent.cpp.obj
+.PHONY : Agent.cpp.obj
+
+Agent.i: Agent.cpp.i
+
+.PHONY : Agent.i
+
+# target to preprocess a source file
+Agent.cpp.i:
+	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/Agent.cpp.i
+.PHONY : Agent.cpp.i
+
+Agent.s: Agent.cpp.s
+
+.PHONY : Agent.s
+
+# target to generate assembly for a file
+Agent.cpp.s:
+	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/Agent.cpp.s
+.PHONY : Agent.cpp.s
+
+Cell.obj: Cell.cpp.obj
+
+.PHONY : Cell.obj
+
+# target to build an object file
+Cell.cpp.obj:
+	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/Cell.cpp.obj
+.PHONY : Cell.cpp.obj
+
+Cell.i: Cell.cpp.i
+
+.PHONY : Cell.i
+
+# target to preprocess a source file
+Cell.cpp.i:
+	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/Cell.cpp.i
+.PHONY : Cell.cpp.i
+
+Cell.s: Cell.cpp.s
+
+.PHONY : Cell.s
+
+# target to generate assembly for a file
+Cell.cpp.s:
+	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/Cell.cpp.s
+.PHONY : Cell.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +212,12 @@ help:
 	@echo ... astar
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Agent.obj
+	@echo ... Agent.i
+	@echo ... Agent.s
+	@echo ... Cell.obj
+	@echo ... Cell.i
+	@echo ... Cell.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

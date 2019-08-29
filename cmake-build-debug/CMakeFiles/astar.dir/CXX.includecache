@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/bruno/CLionProjects/astar/Cell.h
+
+C:/Users/bruno/CLionProjects/astar/main.cpp
+iostream
+-
+ctime
+-
+Cell.h
+C:/Users/bruno/CLionProjects/astar/Cell.h
+

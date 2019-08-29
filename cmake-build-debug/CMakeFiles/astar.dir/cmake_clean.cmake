@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/astar.dir/main.cpp.obj"
+  "CMakeFiles/astar.dir/Cell.cpp.obj"
+  "CMakeFiles/astar.dir/Agent.cpp.obj"
   "astar.pdb"
   "astar.exe"
   "astar.exe.manifest"
