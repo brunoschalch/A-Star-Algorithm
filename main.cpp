@@ -38,8 +38,6 @@ void addWalls() {
     }
 }
 
-void
-
 int main() {
     srand((int) time(0));
 
