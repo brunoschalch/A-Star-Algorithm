@@ -5,7 +5,7 @@
 
 const int WIDTH = 50;
 const int HEIGHT = 50;
-Cell* board[WIDTH][HEIGHT];
+Cell* board[HEIGHT][WIDTH];
 
 void printBoard() {
     for (int y=0; y<HEIGHT; y++) {

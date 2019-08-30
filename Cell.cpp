@@ -58,4 +58,20 @@ void Cell::setIsWall(bool isWall) {
     Cell::isWall = isWall;
 }
 
+bool Cell::isGoalCell() const {
+    return isGoal;
+}
+
+void Cell::setIsGoal(bool isGoal) {
+    Cell::isGoal = isGoal;
+}
+
+Cell *Cell::getParent() const {
+    return parent;
+}
+
+void Cell::setParent(Cell *parent) {
+    Cell::parent = parent;
+}
+
 Cell::~Cell() {}

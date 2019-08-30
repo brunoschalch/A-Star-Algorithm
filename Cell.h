@@ -41,6 +41,14 @@ public:
 
     virtual ~Cell();
 
+    Cell *getParent() const;
+
+    void setParent(Cell *parent);
+
+    bool isGoalCell() const;
+
+    void setIsGoal(bool isGoal);
+
 private:
     int x;
     int y;
@@ -48,6 +56,7 @@ private:
     float h;
     float f;
     bool isWall;
+    bool isGoal;
     Cell* parent;
 };
 

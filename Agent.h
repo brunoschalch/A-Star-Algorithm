@@ -14,9 +14,11 @@ class Agent {
 public:
     Agent();
 
-    Agent(char id);
+
+    Agent(char name);
 
     list<Cell*> calculateShortestPath(Cell* startingPosition);
+
 };
 
 
