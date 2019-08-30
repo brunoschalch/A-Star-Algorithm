@@ -48,6 +48,7 @@ private:
     float h;
     float f;
     bool isWall;
+    Cell* parent;
 };
 
 

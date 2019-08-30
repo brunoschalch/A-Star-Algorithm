@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/bruno/CLionProjects/astar/Agent.cpp
+iostream
+-
+Agent.h
+C:/Users/bruno/CLionProjects/astar/Agent.h
+
+C:/Users/bruno/CLionProjects/astar/Agent.h
+list
+-
+Cell.h
+C:/Users/bruno/CLionProjects/astar/Cell.h
+
 C:/Users/bruno/CLionProjects/astar/Cell.h
 
 C:/Users/bruno/CLionProjects/astar/main.cpp
@@ -15,4 +27,6 @@ ctime
 -
 Cell.h
 C:/Users/bruno/CLionProjects/astar/Cell.h
+Agent.h
+C:/Users/bruno/CLionProjects/astar/Agent.h
 

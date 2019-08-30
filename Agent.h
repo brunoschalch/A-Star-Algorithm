@@ -4,10 +4,19 @@
 
 #ifndef ASTAR_AGENT_H
 #define ASTAR_AGENT_H
+#include <list>
+#include "Cell.h"
+using namespace std;
+
 
 
 class Agent {
+public:
+    Agent();
 
+    Agent(char id);
+
+    list<Cell*> calculateShortestPath(Cell* startingPosition);
 };
 
 
