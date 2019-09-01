@@ -1,18 +1,26 @@
-#include <iostream>
-#include <ctime>
+// A* Algorithm
+//
+// Ana Sollano Kim A01651072
+// Bruno Schalch A01651187
+//
+
 #include "Cell.h"
 #include "Agent.h"
+
+#include <iostream>
+#include <ctime>
 
 const int WIDTH = 50;
 const int HEIGHT = 50;
 Cell* board[HEIGHT][WIDTH];
 
 void printBoard() {
-    for (int y=0; y<HEIGHT; y++) {
-        for (int x=0; x<WIDTH; x++) {
-            if (board[y][x]->isWallCell()){
+    for (int y = 0; y < HEIGHT; y++) {
+        for (int x = 0; x < WIDTH; x++) {
+            if (board[y][x]->isWallCell()) {
                 std::cout << "X";
-            } else {
+            }
+            else {
                 std::cout << "=";
            }
         }
@@ -21,24 +29,24 @@ void printBoard() {
 }
 
 int randomInt(int min, int max) {
-    return (rand() % (max-min)) + min;
+    return (rand() % (max - min)) + min;
 }
 
 void initializeBoard(){
-    for (int i=0; i<HEIGHT; i++) {
-        for (int j=0; j<WIDTH; j++) {
-            board[i][j] = new Cell(j,i);
+    for (int i = 0; i < HEIGHT; i++) {
+        for (int j = 0; j < WIDTH; j++) {
+            board[i][j] = new Cell(j, i);
         }
     }
 }
 
 // Adds between 500 and 800 walls at random positions.
 void addWalls() {
-    int numberOfWalls = randomInt(500,800);
+    int numberOfWalls = randomInt(500, 800);
     std::cout << "Number of walls: " << numberOfWalls << std::endl;
     // Keep adding a wall to a random position that is not a wall until we reach zero.
-    while(numberOfWalls>0){
-        Cell* randomCell = board[randomInt(0,HEIGHT)][randomInt(0,WIDTH)];
+    while (numberOfWalls > 0) {
+        Cell* randomCell = board[randomInt(0, HEIGHT)][randomInt(0, WIDTH)];
         if (!randomCell->isWallCell()) {
             randomCell->setIsWall(true);
             numberOfWalls--;
