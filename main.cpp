@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <stdlib.h>
 
 const int WIDTH = 50;
 const int HEIGHT = 50;
@@ -86,7 +87,7 @@ void printTrajectories(char trajectories[WIDTH][HEIGHT]){
     }
 }
 
-char initTrajectories(char trajectories[HEIGHT][WIDTH]){
+void initTrajectories(char trajectories[HEIGHT][WIDTH]){
     for (int i = 0; i < HEIGHT; ++i) {
         for (int j = 0; j < WIDTH; ++j) {
             trajectories[i][j] = '=';
@@ -116,20 +117,34 @@ void animateAgents(list<Cell *> agent1, list<Cell *> agent2, list<Cell *> agent3
             y1 = agent1Pos->getY();
             trajectories[y1][x1] = 'A';
             it1++;
+        } else {
+            x1 = -1;
+            y1 = -1;
         }
 
         if (it2 != agent2.end()) {
             x2 = agent2Pos->getX();
             y2 = agent2Pos->getY();
-            trajectories[y2][x2] = 'B';
-            it2++;
+            // if x2, y2 equal x1, y1, do nothing and wait one turn.
+            if (!(x2==x1 && y2 == y1)) {
+                trajectories[y2][x2] = 'B';
+                it2++;
+            }
+        } else {
+            x2 = -1;
+            y2 = -1;
         }
 
         if (it3 != agent3.end()) {
             x3 = agent3Pos->getX();
             y3 = agent3Pos->getY();
-            trajectories[y3][x3] = 'C';
-            it3++;
+            if (!(x3==x1 && y3 == y1) && !(x3==x2 && y3 == y2)) {
+                trajectories[y3][x3] = 'C';
+                it3++;
+            }
+        } else {
+            x3 = -1;
+            y3 = -1;
         }
 
         if (it1 == agent1.end() && it2 == agent2.end() && it3 == agent3.end()) {
