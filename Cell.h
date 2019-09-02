@@ -42,7 +42,11 @@ public:
     
     // Returns true if the cell is a wall. False otherwise.
     bool isWallCell() const;
-    
+
+    bool isStartingPositionCell() const;
+
+    void setIsStartingPosition(bool isStartingPosition);
+
 private:
     int x;
     int y;
@@ -51,6 +55,7 @@ private:
     float f;
     bool isWall;
     bool isGoal;
+    bool isStartingPosition;
     Cell* parent;
 };
 

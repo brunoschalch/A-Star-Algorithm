@@ -14,6 +14,14 @@ Cell::Cell(int x, int y, bool isWall) : x(x), y(y), isWall(isWall) { }
 
 Cell::~Cell() { }
 
+bool Cell::isStartingPositionCell() const {
+    return isStartingPosition;
+}
+
+void Cell::setIsStartingPosition(bool isStartingPosition) {
+    Cell::isStartingPosition = isStartingPosition;
+}
+
 void Cell::setX(int x) {
     Cell::x = x;
 }

@@ -39,5 +39,45 @@ private:
     list<Cell*> aStar();
 
     void discoverNeighbours(Cell *cell);
+
+    bool isInOpenList();
+
+    bool isInOpenList(Cell *cell);
+
+    bool isInClosedList(Cell *cell);
+
+    bool isWall(Cell *cell);
+
+    void discoverCell(Cell *parent, Cell *cell);
+
+    bool coordsWithinBounds(int x, int y);
+
+    void tryToImproveCellNumbers(Cell *pCell);
+
+    void tryToDiscoverOrImprove();
+
+    void tryToDiscoverOrImprove(int x, int y);
+
+    void tryToDiscoverOrImprove(int x, int y, Cell *parentCell);
+
+    void tryToImproveCellNumbers(Cell *cell, Cell *parentCell);
+
+    bool areHorizontalOrVertical(Cell *a, Cell *b);
+
+    bool areDiagonal(Cell *a, Cell *b);
+
+    void showlist(list<Cell *> g);
+
+    void plotProgress();
+
+    void moveFromOpenToClosedList(Cell *cell);
+
+    void removeFromOpenList(Cell *cell);
+
+    float calculateH();
+
+    float calculateH(Cell *cell);
+
+    Cell *getGoalCell();
 };
 #endif //ASTAR_AGENT_H

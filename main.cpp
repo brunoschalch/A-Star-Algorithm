@@ -40,6 +40,8 @@ void initializeBoard(){
     for (int i = 0; i < HEIGHT; i++) {
         for (int j = 0; j < WIDTH; j++) {
             board[i][j] = new Cell(j, i);
+            board[i][j]->setIsGoal(false);
+            board[i][j]->setIsWall(false);
         }
     }
 }
@@ -67,12 +69,18 @@ void Setup() {
     startingPosition->setG(0.0);
     startingPosition->setH(0.0);
     startingPosition->setF(0.0);
+
+
+    Cell* goalPosition = board[5][5];
+    goalPosition->setIsWall(false);
+    goalPosition->setIsGoal(true);
+
     testAgent->calculateShortestPath(startingPosition);
 }
 
 int main() {
     srand((int) time(nullptr));
     Setup();
-    printBoard();
+   // printBoard();
     return 0;
 }
