@@ -37,5 +37,7 @@ private:
     void discoverCell(Cell* parent, int x, int y);
     Cell* getBestCellFromOpenList();
     list<Cell*> aStar();
+
+    void discoverNeighbours(Cell *cell);
 };
 #endif //ASTAR_AGENT_H

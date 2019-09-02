@@ -50,7 +50,7 @@ void Agent::discoverCell(Cell* parent, int x, int y) {
 // Calls discoverCell for all neighbouring cells that are not walls, and are not
 // in the open or closed list. If a neighbour is in the open list already, but
 // its g (and f) value can be improved, update parent and values.
-void discoverNeighbours(Cell* cell) {
+void Agent::discoverNeighbours(Cell* cell) {
     
 }
 
