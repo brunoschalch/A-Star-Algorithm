@@ -72,11 +72,82 @@ void addWalls() {
     }
 }
 
+void printTrajectories(char trajectories[WIDTH][HEIGHT]){
+    std::cout << "TRAJECTORIES\n";
+    for (int i = 0; i < HEIGHT; ++i) {
+        for (int j = 0; j < WIDTH; ++j) {
+            if (board[i][j]->isWallCell()) {
+                std::cout << "X";
+            } else {
+                std::cout << trajectories[i][j];
+            }
+        }
+        std::cout << std::endl;
+    }
+}
+
+char initTrajectories(char trajectories[HEIGHT][WIDTH]){
+    for (int i = 0; i < HEIGHT; ++i) {
+        for (int j = 0; j < WIDTH; ++j) {
+            trajectories[i][j] = '=';
+        }
+    }
+}
+
+void animateAgents(list<Cell *> agent1, list<Cell *> agent2, list<Cell *> agent3) {
+    char trajectories[HEIGHT][WIDTH];
+    initTrajectories(trajectories);
+
+    list<Cell *>::iterator it1, it2, it3;
+    int step = 0;
+    it1 = agent1.begin();
+    it2 = agent2.begin();
+    it3 = agent3.begin();
+
+    while (true) {
+        Cell* agent1Pos = *it1;
+        Cell* agent2Pos = *it2;
+        Cell* agent3Pos = *it3;
+
+        int x1, y1, x2, y2, x3, y3;
+
+        if (it1 != agent1.end()) {
+            x1 = agent1Pos->getX();
+            y1 = agent1Pos->getY();
+            trajectories[y1][x1] = 'A';
+            it1++;
+        }
+
+        if (it2 != agent2.end()) {
+            x2 = agent2Pos->getX();
+            y2 = agent2Pos->getY();
+            trajectories[y2][x2] = 'B';
+            it2++;
+        }
+
+        if (it3 != agent3.end()) {
+            x3 = agent3Pos->getX();
+            y3 = agent3Pos->getY();
+            trajectories[y3][x3] = 'C';
+            it3++;
+        }
+
+        if (it1 == agent1.end() && it2 == agent2.end() && it3 == agent3.end()) {
+            break;
+        }
+
+        printTrajectories(trajectories);
+
+    }
+
+}
+
+
 void Setup() {
     initializeBoard();
     addWalls();
 
-    Cell *goalPosition = board[5][10];
+    Cell *goalPosition = board[12][49];
     goalPosition->setIsWall(false);
     goalPosition->setIsGoal(true);
 
@@ -85,20 +156,22 @@ void Setup() {
     startingPosition->setG(0.0);
     startingPosition->setH(0.0);
     startingPosition->setF(0.0);
-    list<Cell *> agent1solved = agent1->calculateShortestPath(startingPosition);
 
     Agent *agent2 = new Agent('b', board);
-    Cell *startingPosition2 = board[17][0];
+    Cell *startingPosition2 = board[24][0];
     startingPosition2->setG(0.0);
     startingPosition2->setH(0.0);
     startingPosition2->setF(0.0);
-    list<Cell *> agent2solved = agent2->calculateShortestPath(startingPosition2);
 
     Agent *agent3 = new Agent('c', board);
-    Cell *startingPosition3 = board[24][0];
+    Cell *startingPosition3 = board[35][0];
     startingPosition3->setG(0.0);
     startingPosition3->setH(0.0);
     startingPosition3->setF(0.0);
+
+
+    list<Cell *> agent1solved = agent1->calculateShortestPath(startingPosition);
+    list<Cell *> agent2solved = agent2->calculateShortestPath(startingPosition2);
     list<Cell *> agent3solved = agent3->calculateShortestPath(startingPosition3);
 
     cout << "Agent 1 solved!: " << endl;
@@ -109,7 +182,10 @@ void Setup() {
 
     cout << "Agent 3 solved!: " << endl;
     showList(agent3solved);
+
+    animateAgents(agent1solved,agent2solved,agent3solved);
 }
+
 
 int main() {
     srand((int) time(nullptr));

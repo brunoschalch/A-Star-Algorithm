@@ -74,7 +74,7 @@ void Agent::moveFromOpenToClosedList(Cell *cell) {
     addToClosedList(cell);
     removeFromOpenList(cell);
 
-    showList(openList);
+  //  showList(openList);
 }
 
 Cell *Agent::getGoalCell() {
@@ -224,7 +224,7 @@ void Agent::discoverNeighbours(Cell *cell) {
     y = cell->getY() - 1;
     tryToDiscoverOrImprove(x, y, cell);
 
-    showList(openList);
+   // showList(openList);
 }
 
 // Gets the best candidate to keep going.
@@ -278,15 +278,17 @@ list<Cell *> Agent::aStar() {
     Cell *finalNode;
 
     while (true) {
-        plotProgress();
+
+        // VERY COOL, FOR DEBUGGING UNCOMMENT. VERY SLOW.
+        //plotProgress();
 
         Cell *next = getBestCellFromOpenList();
         discoverNeighbours(next);
 
         moveFromOpenToClosedList(next);
 
-        cout << "closed:" << endl;
-        showList(closedList);
+      //  cout << "closed:" << endl;
+      //  showList(closedList);
 
         // If the node we just closed is the goal, break the loop and walk back
         // following the parents until we reach the start.
@@ -309,7 +311,7 @@ list<Cell *> Agent::calculateShortestPath(Cell *startingPosition) {
 
     // We add startingPosition to the open list and run the algorithm.
     addToOpenList(startingPosition);
-    showList(openList);
+  //  showList(openList);
 
     // discoverNeighbours(startingPosition);
 
