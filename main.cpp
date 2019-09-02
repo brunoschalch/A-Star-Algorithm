@@ -75,20 +75,41 @@ void addWalls() {
 void Setup() {
     initializeBoard();
     addWalls();
-    Agent* testAgent = new Agent('a', board);
-    Cell* startingPosition = board[5][0];
-    startingPosition->setG(0.0);
-    startingPosition->setH(0.0);
-    startingPosition->setF(0.0);
-    startingPosition->setIsStartingPosition(true);
-
 
     Cell* goalPosition = board[5][10];
     goalPosition->setIsWall(false);
     goalPosition->setIsGoal(true);
 
-    list<Cell*> list = testAgent->calculateShortestPath(startingPosition);
-    showList(list);
+    Agent* agent1 = new Agent('a', board);
+    Cell* startingPosition = board[5][0];
+    startingPosition->setG(0.0);
+    startingPosition->setH(0.0);
+    startingPosition->setF(0.0);
+    list<Cell*> agent1solved = agent1->calculateShortestPath(startingPosition);
+
+
+    Agent* agent2 = new Agent('b', board);
+    Cell* startingPosition2 = board[17][0];
+    startingPosition2->setG(0.0);
+    startingPosition2->setH(0.0);
+    startingPosition2->setF(0.0);
+    list<Cell*> agent2solved = agent2->calculateShortestPath(startingPosition2);
+
+    Agent* agent3 = new Agent('c', board);
+    Cell* startingPosition3 = board[24][0];
+    startingPosition3->setG(0.0);
+    startingPosition3->setH(0.0);
+    startingPosition3->setF(0.0);
+    list<Cell*> agent3solved = agent3->calculateShortestPath(startingPosition3);
+
+    cout << "Agent 1 solved!: " << endl;
+    showList(agent1solved);
+
+    cout << "Agent 2 solved!: " << endl;
+    showList(agent2solved);
+
+    cout << "Agent 3 solved!: " << endl;
+    showList(agent3solved);
 }
 
 int main() {

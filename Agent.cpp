@@ -251,14 +251,18 @@ Cell* Agent::getBestCellFromOpenList() {
     return bestCell;
 }
 
+bool Agent::isStartingPosCell(Cell* cell) {
+    return cell->getX() == startingCell->getX() && cell->getY() == startingCell->getY();
+}
+
 // Constructs a list with each node's parent until we reach the initial node.
-list<Cell*> constructPath(Cell* finalNode) {
+list<Cell*> Agent::constructPath(Cell* finalNode) {
     list<Cell*> list;
     cout << "constructing final path:"<< endl;
 
     Cell * currentCell = finalNode;
 
-    while (!currentCell->isStartingPositionCell()) {
+    while (!isStartingPosCell(currentCell)) {
         list.push_front(currentCell);
      //   cout << "next step is: x:"<< currentCell->getX() << ", y:" << currentCell->getY() << endl;
      //   cout << "g: "<< currentCell->getG() << ", h: " << currentCell->getH() << ", f: " << currentCell->getF() << endl;
@@ -300,6 +304,8 @@ list<Cell*> Agent::calculateShortestPath(Cell* startingPosition) {
     // Printing the starting position.
     cout << "Starting position: x:" << startingPosition->getX()
     << ", y:" << startingPosition->getY() << endl;
+
+    this->startingCell = startingPosition;
     
     // We add startingPosition to the open list and run the algorithm.
     addToOpenList(startingPosition);

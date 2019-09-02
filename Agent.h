@@ -31,7 +31,8 @@ private:
     list<Cell*> closedList;
     Cell* boardCopy[HEIGHT][WIDTH];
     char id;
-    
+    Cell* startingCell;
+
     void addToOpenList(Cell* cell);
     void addToClosedList(Cell* cell);
     void discoverCell(Cell* parent, int x, int y);
@@ -79,5 +80,9 @@ private:
     float calculateH(Cell *cell);
 
     Cell *getGoalCell();
+
+    bool isStartingPosCell(Cell *cell);
+
+    list<Cell *> constructPath(Cell *finalNode);
 };
 #endif //ASTAR_AGENT_H
