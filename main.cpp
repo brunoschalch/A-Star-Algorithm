@@ -32,6 +32,17 @@ void printBoard() {
     }
 }
 
+void showList(list<Cell*> g) {
+    list<Cell*>::iterator it;
+    int step = 0;
+    for (it = g.begin(); it != g.end(); ++it) {
+        Cell* currentCell = *it;
+        cout << "Step "<< step++ << " is: x:"<< currentCell->getX() << ", y:" << currentCell->getY() << endl;
+        cout << "g: "<< currentCell->getG() << ", h: " << currentCell->getH() << ", f: " << currentCell->getF() << endl;
+    }
+    cout << '\n';
+}
+
 int randomInt(int min, int max) {
     return (rand() % (max - min)) + min;
 }
@@ -69,13 +80,15 @@ void Setup() {
     startingPosition->setG(0.0);
     startingPosition->setH(0.0);
     startingPosition->setF(0.0);
+    startingPosition->setIsStartingPosition(true);
 
 
-    Cell* goalPosition = board[5][5];
+    Cell* goalPosition = board[5][10];
     goalPosition->setIsWall(false);
     goalPosition->setIsGoal(true);
 
-    testAgent->calculateShortestPath(startingPosition);
+    list<Cell*> list = testAgent->calculateShortestPath(startingPosition);
+    showList(list);
 }
 
 int main() {

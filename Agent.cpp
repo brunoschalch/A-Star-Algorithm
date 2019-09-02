@@ -11,7 +11,7 @@
 #include <cmath>
 
 //function for printing the elements in a list
-void Agent::showlist(list<Cell*> g) {
+void Agent::showList(list<Cell*> g) {
     list<Cell*>::iterator it;
     cout << "showing list:";
     for (it = g.begin(); it != g.end(); ++it) {
@@ -25,14 +25,14 @@ void Agent::plotProgress(){
     std::cout << "PROGRESS\n";
     for (int i = 0; i < HEIGHT; ++i) {
         for (int j = 0; j < WIDTH; ++j) {
-            if (isInClosedList(boardCopy[i][j])) {
+             if (boardCopy[i][j]->isGoalCell()) {
+                std::cout << 'G';
+            } else if (isInClosedList(boardCopy[i][j])) {
                 std::cout << 'c';
             } else if (isInOpenList(boardCopy[i][j])) {
                 std::cout << 'o';
             } else if (boardCopy[i][j]->isWallCell()) {
                 std::cout << 'X';
-            } else if (boardCopy[i][j]->isGoalCell()) {
-                std::cout << 'G';
             } else {
                 std::cout << '=';
             }
@@ -74,7 +74,7 @@ void Agent::moveFromOpenToClosedList(Cell* cell) {
     addToClosedList(cell);
     removeFromOpenList(cell);
 
-    showlist(openList);
+    showList(openList);
 }
 
 Cell* Agent::getGoalCell() {
@@ -224,7 +224,7 @@ void Agent::discoverNeighbours(Cell* cell) {
     y = cell->getY()-1;
     tryToDiscoverOrImprove(x,y, cell);
 
-    showlist(openList);
+    showList(openList);
 }
 
 // Gets the best candidate to keep going.
@@ -259,11 +259,13 @@ list<Cell*> constructPath(Cell* finalNode) {
     Cell * currentCell = finalNode;
 
     while (!currentCell->isStartingPositionCell()) {
-        cout << "next step is: x:"<< currentCell->getX() << ", y:" << currentCell->getY() << endl;
-        cout << "g: "<< currentCell->getG() << ", h: " << currentCell->getH() << ", f: " << currentCell->getF() << endl;
+        list.push_front(currentCell);
+     //   cout << "next step is: x:"<< currentCell->getX() << ", y:" << currentCell->getY() << endl;
+     //   cout << "g: "<< currentCell->getG() << ", h: " << currentCell->getH() << ", f: " << currentCell->getF() << endl;
         currentCell = currentCell->getParent();
     }
 
+    list.push_front(currentCell);
 
     return list;
 }
@@ -280,7 +282,7 @@ list<Cell*> Agent::aStar() {
         moveFromOpenToClosedList(next);
 
         cout << "closed:"<< endl;
-        showlist(closedList);
+        showList(closedList);
         
         // If the node we just closed is the goal, break the loop and walk back
         // following the parents until we reach the start.
@@ -301,7 +303,7 @@ list<Cell*> Agent::calculateShortestPath(Cell* startingPosition) {
     
     // We add startingPosition to the open list and run the algorithm.
     addToOpenList(startingPosition);
-    showlist(openList);
+    showList(openList);
     
    // discoverNeighbours(startingPosition);
     

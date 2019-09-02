@@ -66,7 +66,7 @@ private:
 
     bool areDiagonal(Cell *a, Cell *b);
 
-    void showlist(list<Cell *> g);
+    static void showList(list<Cell *> g);
 
     void plotProgress();
 
