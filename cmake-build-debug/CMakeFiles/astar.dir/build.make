@@ -56,20 +56,22 @@ include CMakeFiles/astar.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/astar.dir/flags.make
 
-CMakeFiles/astar.dir/main.cpp.obj: CMakeFiles/astar.dir/flags.make
-CMakeFiles/astar.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\bruno\CLionProjects\astar\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/astar.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\astar.dir\main.cpp.obj -c C:\Users\bruno\CLionProjects\astar\main.cpp
+CMakeFiles/astar.dir/Agent.cpp.obj: CMakeFiles/astar.dir/flags.make
+CMakeFiles/astar.dir/Agent.cpp.obj: CMakeFiles/astar.dir/includes_CXX.rsp
+CMakeFiles/astar.dir/Agent.cpp.obj: ../Agent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\bruno\CLionProjects\astar\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/astar.dir/Agent.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\astar.dir\Agent.cpp.obj -c C:\Users\bruno\CLionProjects\astar\Agent.cpp
 
-CMakeFiles/astar.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/astar.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\bruno\CLionProjects\astar\main.cpp > CMakeFiles\astar.dir\main.cpp.i
+CMakeFiles/astar.dir/Agent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/astar.dir/Agent.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\bruno\CLionProjects\astar\Agent.cpp > CMakeFiles\astar.dir\Agent.cpp.i
 
-CMakeFiles/astar.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astar.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\bruno\CLionProjects\astar\main.cpp -o CMakeFiles\astar.dir\main.cpp.s
+CMakeFiles/astar.dir/Agent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astar.dir/Agent.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\bruno\CLionProjects\astar\Agent.cpp -o CMakeFiles\astar.dir\Agent.cpp.s
 
 CMakeFiles/astar.dir/Cell.cpp.obj: CMakeFiles/astar.dir/flags.make
+CMakeFiles/astar.dir/Cell.cpp.obj: CMakeFiles/astar.dir/includes_CXX.rsp
 CMakeFiles/astar.dir/Cell.cpp.obj: ../Cell.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\bruno\CLionProjects\astar\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/astar.dir/Cell.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\astar.dir\Cell.cpp.obj -c C:\Users\bruno\CLionProjects\astar\Cell.cpp
@@ -82,31 +84,32 @@ CMakeFiles/astar.dir/Cell.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astar.dir/Cell.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\bruno\CLionProjects\astar\Cell.cpp -o CMakeFiles\astar.dir\Cell.cpp.s
 
-CMakeFiles/astar.dir/Agent.cpp.obj: CMakeFiles/astar.dir/flags.make
-CMakeFiles/astar.dir/Agent.cpp.obj: ../Agent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\bruno\CLionProjects\astar\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/astar.dir/Agent.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\astar.dir\Agent.cpp.obj -c C:\Users\bruno\CLionProjects\astar\Agent.cpp
+CMakeFiles/astar.dir/main.cpp.obj: CMakeFiles/astar.dir/flags.make
+CMakeFiles/astar.dir/main.cpp.obj: CMakeFiles/astar.dir/includes_CXX.rsp
+CMakeFiles/astar.dir/main.cpp.obj: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\bruno\CLionProjects\astar\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/astar.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\astar.dir\main.cpp.obj -c C:\Users\bruno\CLionProjects\astar\main.cpp
 
-CMakeFiles/astar.dir/Agent.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/astar.dir/Agent.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\bruno\CLionProjects\astar\Agent.cpp > CMakeFiles\astar.dir\Agent.cpp.i
+CMakeFiles/astar.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/astar.dir/main.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\bruno\CLionProjects\astar\main.cpp > CMakeFiles\astar.dir\main.cpp.i
 
-CMakeFiles/astar.dir/Agent.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astar.dir/Agent.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\bruno\CLionProjects\astar\Agent.cpp -o CMakeFiles\astar.dir\Agent.cpp.s
+CMakeFiles/astar.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/astar.dir/main.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\bruno\CLionProjects\astar\main.cpp -o CMakeFiles\astar.dir\main.cpp.s
 
 # Object files for target astar
 astar_OBJECTS = \
-"CMakeFiles/astar.dir/main.cpp.obj" \
+"CMakeFiles/astar.dir/Agent.cpp.obj" \
 "CMakeFiles/astar.dir/Cell.cpp.obj" \
-"CMakeFiles/astar.dir/Agent.cpp.obj"
+"CMakeFiles/astar.dir/main.cpp.obj"
 
 # External object files for target astar
 astar_EXTERNAL_OBJECTS =
 
-astar.exe: CMakeFiles/astar.dir/main.cpp.obj
-astar.exe: CMakeFiles/astar.dir/Cell.cpp.obj
 astar.exe: CMakeFiles/astar.dir/Agent.cpp.obj
+astar.exe: CMakeFiles/astar.dir/Cell.cpp.obj
+astar.exe: CMakeFiles/astar.dir/main.cpp.obj
 astar.exe: CMakeFiles/astar.dir/build.make
 astar.exe: CMakeFiles/astar.dir/linklibs.rsp
 astar.exe: CMakeFiles/astar.dir/objects1.rsp

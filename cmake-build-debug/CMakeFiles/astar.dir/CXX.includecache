@@ -7,16 +7,32 @@
 #IncludeRegexTransform: 
 
 C:/Users/bruno/CLionProjects/astar/Agent.cpp
-iostream
--
 Agent.h
 C:/Users/bruno/CLionProjects/astar/Agent.h
+float.h
+-
+iostream
+-
 
 C:/Users/bruno/CLionProjects/astar/Agent.h
+Cell.h
+C:/Users/bruno/CLionProjects/astar/Cell.h
 list
 -
+
+C:/Users/bruno/CLionProjects/astar/Cell.cpp
 Cell.h
 C:/Users/bruno/CLionProjects/astar/Cell.h
 
 C:/Users/bruno/CLionProjects/astar/Cell.h
+
+C:/Users/bruno/CLionProjects/astar/main.cpp
+Agent.h
+C:/Users/bruno/CLionProjects/astar/Agent.h
+Cell.h
+C:/Users/bruno/CLionProjects/astar/Cell.h
+iostream
+-
+ctime
+-
 

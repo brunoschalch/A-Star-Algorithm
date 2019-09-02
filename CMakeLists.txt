@@ -3,4 +3,11 @@ project(astar)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(astar main.cpp Cell.cpp Cell.h Agent.cpp Agent.h)
+include_directories(.)
+
+add_executable(astar
+        Agent.cpp
+        Agent.h
+        Cell.cpp
+        Cell.h
+        main.cpp)
