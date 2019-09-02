@@ -15,19 +15,27 @@ using namespace std;
 
 class Agent {
 public:
-    Agent();
-    Agent(char name);
-    ~Agent();
-
-    list<Cell*> calculateShortestPath(Cell* startingPosition);
-
-private:
     static const int WIDTH = 50;
     static const int HEIGHT = 50;
+    constexpr static const float VERTICAL = 1.0f;
+    constexpr static const float DIAGONAL = 1.4f;
+    
+    Agent();
+    Agent(char name, Cell* board[WIDTH][HEIGHT]);
+    ~Agent();
+    
+    list<Cell*> calculateShortestPath(Cell* startingPosition);
+    
+private:
     list<Cell*> openList;
     list<Cell*> closedList;
-    // TODO: Review type here.
     Cell* boardCopy[HEIGHT][WIDTH];
     char id;
+    
+    void addToOpenList(Cell* cell);
+    void addToClosedList(Cell* cell);
+    void discoverCell(Cell* parent, int x, int y);
+    Cell* getBestCellFromOpenList();
+    list<Cell*> aStar();
 };
 #endif //ASTAR_AGENT_H

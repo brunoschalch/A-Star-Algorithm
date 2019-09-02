@@ -2,10 +2,13 @@
 //
 // Ana Sollano Kim A01651072
 // Bruno Schalch A01651187
+// Environment
+//
+// Problem characterization
 //
 
-#include "Cell.h"
 #include "Agent.h"
+#include "Cell.h"
 
 #include <iostream>
 #include <ctime>
@@ -17,12 +20,13 @@ Cell* board[HEIGHT][WIDTH];
 void printBoard() {
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
-            if (board[y][x]->isWallCell()) {
+            if (board[y][x]->isWallCell()){
+                // Walls are marked with an X.
                 std::cout << "X";
             }
             else {
                 std::cout << "=";
-           }
+            }
         }
         std::cout << '\n';
     }
@@ -44,6 +48,7 @@ void initializeBoard(){
 void addWalls() {
     int numberOfWalls = randomInt(500, 800);
     std::cout << "Number of walls: " << numberOfWalls << std::endl;
+    
     // Keep adding a wall to a random position that is not a wall until we reach zero.
     while (numberOfWalls > 0) {
         Cell* randomCell = board[randomInt(0, HEIGHT)][randomInt(0, WIDTH)];
@@ -57,8 +62,12 @@ void addWalls() {
 void Setup() {
     initializeBoard();
     addWalls();
-    Agent* testAgent = new Agent('a');
-    testAgent->calculateShortestPath(board[5][0]);
+    Agent* testAgent = new Agent('a', board);
+    Cell* startingPosition = board[5][0];
+    startingPosition->setG(0.0);
+    startingPosition->setH(0.0);
+    startingPosition->setF(0.0);
+    testAgent->calculateShortestPath(startingPosition);
 }
 
 int main() {
