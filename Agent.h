@@ -8,6 +8,7 @@
 #define ASTAR_AGENT_H
 
 #include "Cell.h"
+#include "OurList.h"
 
 #include <list>
 
@@ -27,7 +28,7 @@ public:
     list<Cell*> calculateShortestPath(Cell* startingPosition);
     
 private:
-    list<Cell*> openList;
+    OurList openList; // list<Cell*> openList;
     list<Cell*> closedList;
     Cell* boardCopy[HEIGHT][WIDTH];
     char id;

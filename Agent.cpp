@@ -60,15 +60,7 @@ void Agent::addToClosedList(Cell* cell) {
 }
 
 void Agent::removeFromOpenList(Cell* cell) {
-    list<Cell*>::iterator it;
-    for (it = openList.begin(); it != openList.end(); ++it) {
-        Cell* openListCell = *it;
-        if (openListCell->getX() == cell->getX() &&
-            openListCell->getY() == cell->getY()) {
-            openList.erase(it);
-            break;
-        }
-    }
+    openList.remove(cell);
 }
 
 void Agent::moveFromOpenToClosedList(Cell* cell) {
@@ -119,23 +111,15 @@ void Agent::discoverCell(Cell* parent, Cell*  cell) {
 }
 
 bool Agent::isInOpenList(Cell* cell) {
-    list<Cell*>::iterator it;
-    for (it = openList.begin(); it != openList.end(); ++it) {
-        Cell* openListCell = *it;
-        if (openListCell->getX() == cell->getX() &&
-            openListCell->getY() == cell->getY()) {
-            return true;
-        }
-    }
-    return false;
+    return openList.find(cell);
 }
 
 bool Agent::isInClosedList(Cell* cell) {
     list<Cell*>::iterator it;
     for (it = closedList.begin(); it != closedList.end(); ++it) {
-        Cell* openListCell = *it;
-        if (openListCell->getX() == cell->getX() &&
-            openListCell->getY() == cell->getY()) {
+        Cell* closedListCell = *it;
+        if (closedListCell->getX() == cell->getX() &&
+            closedListCell->getY() == cell->getY()) {
             return true;
         }
     }
@@ -230,9 +214,8 @@ Cell* Agent::getBestCellFromOpenList() {
     float minH = FLT_MAX;
     Cell* bestCell = nullptr;
     
-    list<Cell*>::iterator it;
-    for (it = openList.begin(); it != openList.end(); ++it) {
-        Cell* cell = *it;
+    for (int i = 0; i < openList.size(); i++) {
+        Cell* cell = openList.find(i);
         float f = cell->getF();
         float h = cell->getH();
         
