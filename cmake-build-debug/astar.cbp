@@ -94,6 +94,12 @@
 		<Unit filename="C:/Users/bruno/CLionProjects/astar/Cell.h">
 			<Option target="astar"/>
 		</Unit>
+		<Unit filename="C:/Users/bruno/CLionProjects/astar/OurList.cpp">
+			<Option target="astar"/>
+		</Unit>
+		<Unit filename="C:/Users/bruno/CLionProjects/astar/OurList.h">
+			<Option target="astar"/>
+		</Unit>
 		<Unit filename="C:/Users/bruno/CLionProjects/astar/main.cpp">
 			<Option target="astar"/>
 		</Unit>

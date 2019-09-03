@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/bruno/CLionProjects/astar/Agent.cpp" "C:/Users/bruno/CLionProjects/astar/cmake-build-debug/CMakeFiles/astar.dir/Agent.cpp.obj"
   "C:/Users/bruno/CLionProjects/astar/Cell.cpp" "C:/Users/bruno/CLionProjects/astar/cmake-build-debug/CMakeFiles/astar.dir/Cell.cpp.obj"
+  "C:/Users/bruno/CLionProjects/astar/OurList.cpp" "C:/Users/bruno/CLionProjects/astar/cmake-build-debug/CMakeFiles/astar.dir/OurList.cpp.obj"
   "C:/Users/bruno/CLionProjects/astar/main.cpp" "C:/Users/bruno/CLionProjects/astar/cmake-build-debug/CMakeFiles/astar.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

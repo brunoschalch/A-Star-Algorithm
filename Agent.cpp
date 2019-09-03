@@ -22,7 +22,7 @@ void Agent::showList(list<Cell*> g) {
 }
 
 void Agent::plotProgress() {
-    std::cout << "PROGRESS\n";
+    std::cout << "PROGRESS of Agent "<< id <<"\n";
     for (int i = 0; i < HEIGHT; ++i) {
         for (int j = 0; j < WIDTH; ++j) {
             if (boardCopy[i][j]->isGoalCell()) {
@@ -251,7 +251,7 @@ list<Cell*> Agent::aStar() {
     
     while (true) {
         // VERY COOL, FOR DEBUGGING UNCOMMENT. VERY SLOW.
-        // plotProgress();
+       // plotProgress();
         Cell* next = getBestCellFromOpenList();
         discoverNeighbours(next);
         moveFromOpenToClosedList(next);

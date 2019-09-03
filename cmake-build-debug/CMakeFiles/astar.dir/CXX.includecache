@@ -9,10 +9,18 @@
 C:/Users/bruno/CLionProjects/astar/Agent.h
 Cell.h
 C:/Users/bruno/CLionProjects/astar/Cell.h
+OurList.h
+C:/Users/bruno/CLionProjects/astar/OurList.h
 list
 -
 
 C:/Users/bruno/CLionProjects/astar/Cell.h
+
+C:/Users/bruno/CLionProjects/astar/OurList.h
+Cell.h
+C:/Users/bruno/CLionProjects/astar/Cell.h
+stdio.h
+-
 
 C:/Users/bruno/CLionProjects/astar/main.cpp
 Agent.h

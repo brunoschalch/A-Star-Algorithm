@@ -10,4 +10,6 @@ add_executable(astar
         Agent.h
         Cell.cpp
         Cell.h
-        main.cpp)
+        main.cpp
+        OurList.cpp
+        OurList.h)

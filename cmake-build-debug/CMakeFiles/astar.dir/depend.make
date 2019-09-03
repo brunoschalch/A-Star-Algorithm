@@ -4,11 +4,17 @@
 CMakeFiles/astar.dir/Agent.cpp.obj: ../Agent.cpp
 CMakeFiles/astar.dir/Agent.cpp.obj: ../Agent.h
 CMakeFiles/astar.dir/Agent.cpp.obj: ../Cell.h
+CMakeFiles/astar.dir/Agent.cpp.obj: ../OurList.h
 
 CMakeFiles/astar.dir/Cell.cpp.obj: ../Cell.cpp
 CMakeFiles/astar.dir/Cell.cpp.obj: ../Cell.h
 
+CMakeFiles/astar.dir/OurList.cpp.obj: ../Cell.h
+CMakeFiles/astar.dir/OurList.cpp.obj: ../OurList.cpp
+CMakeFiles/astar.dir/OurList.cpp.obj: ../OurList.h
+
 CMakeFiles/astar.dir/main.cpp.obj: ../Agent.h
 CMakeFiles/astar.dir/main.cpp.obj: ../Cell.h
+CMakeFiles/astar.dir/main.cpp.obj: ../OurList.h
 CMakeFiles/astar.dir/main.cpp.obj: ../main.cpp
 

@@ -176,6 +176,33 @@ Cell.cpp.s:
 	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/Cell.cpp.s
 .PHONY : Cell.cpp.s
 
+OurList.obj: OurList.cpp.obj
+
+.PHONY : OurList.obj
+
+# target to build an object file
+OurList.cpp.obj:
+	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/OurList.cpp.obj
+.PHONY : OurList.cpp.obj
+
+OurList.i: OurList.cpp.i
+
+.PHONY : OurList.i
+
+# target to preprocess a source file
+OurList.cpp.i:
+	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/OurList.cpp.i
+.PHONY : OurList.cpp.i
+
+OurList.s: OurList.cpp.s
+
+.PHONY : OurList.s
+
+# target to generate assembly for a file
+OurList.cpp.s:
+	$(MAKE) -f CMakeFiles\astar.dir\build.make CMakeFiles/astar.dir/OurList.cpp.s
+.PHONY : OurList.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -218,6 +245,9 @@ help:
 	@echo ... Cell.obj
 	@echo ... Cell.i
 	@echo ... Cell.s
+	@echo ... OurList.obj
+	@echo ... OurList.i
+	@echo ... OurList.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

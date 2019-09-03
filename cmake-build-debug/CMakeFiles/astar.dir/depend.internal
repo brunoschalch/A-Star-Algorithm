@@ -5,10 +5,16 @@ CMakeFiles/astar.dir/Agent.cpp.obj
  C:/Users/bruno/CLionProjects/astar/Agent.cpp
  C:/Users/bruno/CLionProjects/astar/Agent.h
  C:/Users/bruno/CLionProjects/astar/Cell.h
+ C:/Users/bruno/CLionProjects/astar/OurList.h
 CMakeFiles/astar.dir/Cell.cpp.obj
  C:/Users/bruno/CLionProjects/astar/Cell.cpp
  C:/Users/bruno/CLionProjects/astar/Cell.h
+CMakeFiles/astar.dir/OurList.cpp.obj
+ C:/Users/bruno/CLionProjects/astar/Cell.h
+ C:/Users/bruno/CLionProjects/astar/OurList.cpp
+ C:/Users/bruno/CLionProjects/astar/OurList.h
 CMakeFiles/astar.dir/main.cpp.obj
  C:/Users/bruno/CLionProjects/astar/Agent.h
  C:/Users/bruno/CLionProjects/astar/Cell.h
+ C:/Users/bruno/CLionProjects/astar/OurList.h
  C:/Users/bruno/CLionProjects/astar/main.cpp

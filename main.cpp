@@ -179,7 +179,7 @@ void Setup() {
     goalPosition->setIsGoal(true);
 
     Agent* agent1 = new Agent('a', board);
-    Cell* startingPosition1 = board[5][0];
+    Cell* startingPosition1 = board[15][0];
     startingPosition1->setG(0.0);
     startingPosition1->setH(0.0);
     startingPosition1->setF(0.0);
