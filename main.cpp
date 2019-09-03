@@ -45,9 +45,14 @@ void showList(list<Cell *> g) {
     int step = 0;
     for (it = g.begin(); it != g.end(); ++it) {
         Cell *currentCell = *it;
-        cout << "Step " << step++ << " is: x:" << currentCell->getX() << ", y:" << currentCell->getY() << endl;
-        cout << "g: " << currentCell->getG() << ", h: " << currentCell->getH() << ", f: " << currentCell->getF()
-             << endl;
+        
+        cout << "Step " << step++
+        << " is: x:" << currentCell->getX()
+        << ", y:" << currentCell->getY() << endl;
+        
+        cout << "g: " << currentCell->getG()
+        << ", h: " << currentCell->getH()
+        << ", f: " << currentCell->getF() << endl;
     }
     cout << '\n';
 }
@@ -71,7 +76,8 @@ void addWalls() {
     int numberOfWalls = randomInt(500, 800);
     std::cout << "Number of walls: " << numberOfWalls << std::endl;
 
-    // Keep adding a wall to a random position that is not a wall until we reach zero.
+    // Keep adding a wall to a random position that is not a wall until we
+    // reach zero.
     while (numberOfWalls > 0) {
         Cell *randomCell = board[randomInt(0, HEIGHT)][randomInt(0, WIDTH)];
         if (!randomCell->isWallCell()) {
@@ -103,12 +109,11 @@ void initTrajectories(char trajectories[HEIGHT][WIDTH]){
     }
 }
 
-void animateAgents(list<Cell *> agent1, list<Cell *> agent2, list<Cell *> agent3) {
+void animateAgents(list<Cell*> agent1, list<Cell*> agent2, list<Cell*> agent3) {
     char trajectories[HEIGHT][WIDTH];
     initTrajectories(trajectories);
 
     list<Cell *>::iterator it1, it2, it3;
-    int step = 0;
     it1 = agent1.begin();
     it2 = agent2.begin();
     it3 = agent3.begin();
@@ -133,7 +138,8 @@ void animateAgents(list<Cell *> agent1, list<Cell *> agent2, list<Cell *> agent3
         if (it2 != agent2.end()) {
             x2 = agent2Pos->getX();
             y2 = agent2Pos->getY();
-            // if x2, y2 equal x1, y1, do nothing and wait one turn.
+            
+            // If x2, y2 equal x1, y1, do nothing and wait one turn.
             if (!(x2==x1 && y2 == y1)) {
                 trajectories[y2][x2] = 'B';
                 it2++;
@@ -160,9 +166,7 @@ void animateAgents(list<Cell *> agent1, list<Cell *> agent2, list<Cell *> agent3
         }
 
         printTrajectories(trajectories);
-
     }
-
 }
 
 
@@ -170,32 +174,32 @@ void Setup() {
     initializeBoard();
     addWalls();
 
-    Cell *goalPosition = board[12][49];
+    Cell* goalPosition = board[12][49];
     goalPosition->setIsWall(false);
     goalPosition->setIsGoal(true);
 
-    Agent *agent1 = new Agent('a', board);
-    Cell *startingPosition = board[5][0];
-    startingPosition->setG(0.0);
-    startingPosition->setH(0.0);
-    startingPosition->setF(0.0);
+    Agent* agent1 = new Agent('a', board);
+    Cell* startingPosition1 = board[5][0];
+    startingPosition1->setG(0.0);
+    startingPosition1->setH(0.0);
+    startingPosition1->setF(0.0);
 
-    Agent *agent2 = new Agent('b', board);
-    Cell *startingPosition2 = board[24][0];
+    Agent* agent2 = new Agent('b', board);
+    Cell* startingPosition2 = board[24][0];
     startingPosition2->setG(0.0);
     startingPosition2->setH(0.0);
     startingPosition2->setF(0.0);
 
-    Agent *agent3 = new Agent('c', board);
-    Cell *startingPosition3 = board[35][0];
+    Agent* agent3 = new Agent('c', board);
+    Cell* startingPosition3 = board[35][0];
     startingPosition3->setG(0.0);
     startingPosition3->setH(0.0);
     startingPosition3->setF(0.0);
 
 
-    list<Cell *> agent1solved = agent1->calculateShortestPath(startingPosition);
-    list<Cell *> agent2solved = agent2->calculateShortestPath(startingPosition2);
-    list<Cell *> agent3solved = agent3->calculateShortestPath(startingPosition3);
+    list<Cell*> agent1solved = agent1->calculateShortestPath(startingPosition1);
+    list<Cell*> agent2solved = agent2->calculateShortestPath(startingPosition2);
+    list<Cell*> agent3solved = agent3->calculateShortestPath(startingPosition3);
 
     cout << "Agent 1 solved!: " << endl;
     showList(agent1solved);
@@ -206,13 +210,12 @@ void Setup() {
     cout << "Agent 3 solved!: " << endl;
     showList(agent3solved);
 
-    animateAgents(agent1solved,agent2solved,agent3solved);
+    animateAgents(agent1solved, agent2solved, agent3solved);
 }
 
 
 int main() {
     srand((int) time(nullptr));
     Setup();
-    // printBoard();
     return 0;
 }
