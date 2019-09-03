@@ -3,9 +3,17 @@
 // Ana Sollano Kim A01651072
 // Bruno Schalch A01651187
 // Environment
+// Deterministic, sequential, static, discrete, known.
 //
 // Problem characterization
-//
+// IN(s) = board with walls randomly added.
+// ACTIONS(s) = compute the shortest path based on the values (f,g,h and wall)
+// of the 8 neighbouring cells.
+// Transition Model: returns the board with the path currently computed
+// Goal Test: a path between the initial cell and the goal is given
+// Path Cost: take the minimum F value and move there. The final path must be
+// the one that has the minimum F, or in the case that two possible paths have
+// the same F, the minimum H.
 
 #include "Agent.h"
 #include "Cell.h"
@@ -16,7 +24,7 @@
 
 const int WIDTH = 50;
 const int HEIGHT = 50;
-Cell *board[HEIGHT][WIDTH];
+Cell* board[HEIGHT][WIDTH];
 
 void printBoard() {
     for (int y = 0; y < HEIGHT; y++) {
