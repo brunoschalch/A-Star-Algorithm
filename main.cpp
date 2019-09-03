@@ -3,17 +3,14 @@
 // Ana Sollano Kim A01651072
 // Bruno Schalch A01651187
 // Environment
-// Deterministic, sequential, static, discrete, known.
+// Fully observable, Deterministic, sequential, static, discrete, known.
 //
 // Problem characterization
 // IN(s) = board with walls randomly added.
-// ACTIONS(s) = compute the shortest path based on the values (f,g,h and wall)
-// of the 8 neighbouring cells.
-// Transition Model: returns the board with the path currently computed
-// Goal Test: a path between the initial cell and the goal is given
-// Path Cost: take the minimum F value and move there. The final path must be
-// the one that has the minimum F, or in the case that two possible paths have
-// the same F, the minimum H.
+// ACTIONS(s) = move 1 horizontally, vertically or diagonally.
+// Transition Model: T(A) -> T(A'). In each transition, the open list or closed list of the agent can change.
+// Goal Test: Goal is reached when the agent runs into the goal node.
+// Path Cost: Cost of horizontal and vertical is 1, diagonal is 1.4. Path is determined by rule: lowest f, then lowest h.
 
 #include "Agent.h"
 #include "Cell.h"
@@ -179,7 +176,7 @@ void Setup() {
     goalPosition->setIsGoal(true);
 
     Agent* agent1 = new Agent('a', board);
-    Cell* startingPosition1 = board[15][0];
+    Cell* startingPosition1 = board[5][0];
     startingPosition1->setG(0.0);
     startingPosition1->setH(0.0);
     startingPosition1->setF(0.0);
