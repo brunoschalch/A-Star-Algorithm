@@ -14,8 +14,6 @@ Cell::Cell(int x, int y, bool isWall) : x(x), y(y), isWall(isWall) { }
 
 Cell::~Cell() { }
 
-
-
 void Cell::setX(int x) {
     Cell::x = x;
 }

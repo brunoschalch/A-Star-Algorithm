@@ -32,57 +32,42 @@ private:
     Cell* boardCopy[HEIGHT][WIDTH];
     char id;
     Cell* startingCell;
-
+    
+    // Adding elements to the open or closed lists.
     void addToOpenList(Cell* cell);
     void addToClosedList(Cell* cell);
-    void discoverCell(Cell* parent, int x, int y);
-    Cell* getBestCellFromOpenList();
-    list<Cell*> aStar();
-
-    void discoverNeighbours(Cell *cell);
-
-    bool isInOpenList();
-
-    bool isInOpenList(Cell *cell);
-
-    bool isInClosedList(Cell *cell);
-
-    bool isWall(Cell *cell);
-
-    void discoverCell(Cell *parent, Cell *cell);
-
-    bool coordsWithinBounds(int x, int y);
-
-    void tryToImproveCellNumbers(Cell *pCell);
-
-    void tryToDiscoverOrImprove();
-
-    void tryToDiscoverOrImprove(int x, int y);
-
-    void tryToDiscoverOrImprove(int x, int y, Cell *parentCell);
-
-    void tryToImproveCellNumbers(Cell *cell, Cell *parentCell);
-
-    bool areHorizontalOrVertical(Cell *a, Cell *b);
-
-    bool areDiagonal(Cell *a, Cell *b);
-
-    static void showList(list<Cell *> g);
-
-    void plotProgress();
-
+    
+    // Iterating to know if the lists contain a particular cell.
+    bool isInOpenList(Cell* cell);
+    bool isInClosedList(Cell* cell);
+    
+    // Helper functions to remove elements from lists.
     void moveFromOpenToClosedList(Cell *cell);
-
     void removeFromOpenList(Cell *cell);
-
-    float calculateH();
-
-    float calculateH(Cell *cell);
-
-    Cell *getGoalCell();
-
-    bool isStartingPosCell(Cell *cell);
-
-    list<Cell *> constructPath(Cell *finalNode);
+    
+    // Debugging-purpose functions.
+    static void showList(list<Cell *> g);
+    void plotProgress();
+    
+    void discoverCell(Cell* parent, Cell* cell);
+    void discoverNeighbours(Cell* cell);
+    
+    // Returns true if the coordinates are within the bounds. False otherwise.
+    bool coordsWithinBounds(int x, int y);
+    
+    // Try to improve the values when possible.
+    void tryToDiscoverOrImprove(int x, int y, Cell* parentCell);
+    void tryToImproveCellNumbers(Cell* cell, Cell* parentCell);
+    
+    // Helper functions to compute values.
+    float calculateH(Cell* cell);
+    bool areHorizontalOrVertical(Cell* a, Cell* b);
+    
+    Cell* getGoalCell();
+    Cell* getBestCellFromOpenList();
+    bool isStartingPosCell(Cell* cell);
+    
+    list<Cell*> aStar();
+    list<Cell*> constructPath(Cell*finalNode);
 };
 #endif //ASTAR_AGENT_H
